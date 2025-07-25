@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Target, Lightbulb, Award } from "lucide-react";
-import teamOffice from "@/assets/team-office.jpg";
+import cyberTeamOffice from "@/assets/cyber-team-office.jpg";
 
 const About = () => {
   const values = [
@@ -61,12 +61,12 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary to-secondary overflow-hidden">
+      <section className="relative py-20 gradient-cyber overflow-hidden">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in neon-glow">
             About NextLevelDesign
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto animate-slide-in-left">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto animate-slide-in-left">
             We're a team of passionate designers, developers, and strategists dedicated to creating digital experiences that drive growth and innovation.
           </p>
         </div>
@@ -76,7 +76,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4 neon-glow">
               Our Mission & Values
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -86,7 +86,7 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="text-center group hover:shadow-hover transition-smooth">
+              <Card key={index} className="text-center group hover:shadow-neon transition-cyber glass-card">
                 <CardContent className="p-8">
                   <div className="mb-4 flex justify-center">{value.icon}</div>
                   <h3 className="font-heading text-xl font-semibold mb-3">{value.title}</h3>
@@ -103,30 +103,30 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6 neon-glow">
                 Meet Our Team
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Our diverse team brings together expertise from design, development, and digital marketing to create exceptional results for our clients.
               </p>
-              <Button variant="secondary" size="lg">
+              <Button variant="glass" size="lg">
                 Join Our Team
               </Button>
             </div>
             <div className="relative">
               <img 
-                src={teamOffice} 
+                src={cyberTeamOffice}
                 alt="NextLevelDesign team at work" 
-                className="rounded-lg shadow-elegant w-full"
+                className="rounded-lg shadow-neon w-full"
               />
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="hover:shadow-hover transition-smooth">
+              <Card key={index} className="hover:shadow-neon transition-cyber glass-card">
                 <CardContent className="p-6">
-                  <h3 className="font-heading text-xl font-semibold mb-1">{member.name}</h3>
+                  <h3 className="font-heading text-xl font-semibold mb-1 text-primary neon-glow">{member.name}</h3>
                   <p className="text-secondary font-medium mb-3">{member.role}</p>
                   <p className="text-muted-foreground mb-4">{member.bio}</p>
                   <div className="flex flex-wrap gap-2">
@@ -145,7 +145,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4 neon-glow">
               Our Journey
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -155,13 +155,13 @@ const About = () => {
 
           <div className="max-w-4xl mx-auto">
             {milestones.map((milestone, index) => (
-              <div key={index} className="flex items-start mb-8 last:mb-0">
+              <div key={index} className="flex items-start mb-8 last:mb-0 group">
                 <div className="flex-shrink-0 w-20 text-right mr-8">
-                  <span className="font-heading font-bold text-secondary text-lg">
+                  <span className="font-heading font-bold text-secondary text-lg group-hover:neon-glow">
                     {milestone.year}
                   </span>
                 </div>
-                <div className="flex-shrink-0 w-4 h-4 rounded-full bg-secondary mt-2 mr-8"></div>
+                <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary mt-2 mr-8 group-hover:animate-neon-pulse shadow-neon"></div>
                 <div className="flex-1">
                   <p className="text-foreground">{milestone.event}</p>
                 </div>
