@@ -195,19 +195,29 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-cyber">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+      <section className="py-20 relative overflow-hidden">
+        {/* Dark background with subtle gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background to-muted/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10" />
+        
+        {/* Animated elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-primary/20 rotate-45 animate-slow-spin" />
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-secondary/30 animate-pulse" />
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground neon-glow mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's discuss your project and see how we can help bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="xl" asChild>
+            <Button variant="cyber" size="xl" asChild>
               <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Get a Quote</Link>
             </Button>
-            <Button variant="outline" size="xl" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+            <Button variant="glass" size="xl" asChild>
               <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Book Consultation</Link>
             </Button>
           </div>
