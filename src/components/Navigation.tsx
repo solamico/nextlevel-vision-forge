@@ -22,7 +22,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="font-heading font-bold text-xl text-primary cyber-glitch" data-text="NextLevelDesign">
+          <Link to="/" className="font-heading font-bold text-xl text-primary cyber-glitch" data-text="NextLevelDesign" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             NextLevel<span className="text-secondary animate-neon-pulse">Design</span>
           </Link>
 

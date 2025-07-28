@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Link } from "react-router-dom";
 import { ExternalLink, Eye } from "lucide-react";
 
 const Portfolio = () => {
@@ -209,8 +210,8 @@ const Portfolio = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's create something amazing together. Get in touch to discuss your next project.
           </p>
-          <Button variant="hero" size="xl">
-            Start Your Project
+          <Button variant="hero" size="xl" asChild>
+            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Start Your Project</Link>
           </Button>
         </div>
       </section>
