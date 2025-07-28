@@ -89,10 +89,10 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white neon-glow mb-6 animate-fade-in">
             Our Portfolio
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto animate-slide-in-left">
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto animate-slide-in-left">
             Explore our latest projects and see how we've helped businesses transform their digital presence.
           </p>
         </div>

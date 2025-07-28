@@ -32,7 +32,9 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className={`font-heading font-medium transition-cyber relative ${
                   isActive(item.path)
                     ? "text-primary neon-glow"
