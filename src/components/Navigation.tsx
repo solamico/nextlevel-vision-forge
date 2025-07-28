@@ -32,6 +32,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`font-heading font-medium transition-cyber relative ${
                   isActive(item.path)
                     ? "text-primary neon-glow"
@@ -48,7 +49,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="cyber" size="lg" asChild>
-              <Link to="/contact">Get a Quote</Link>
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Get a Quote</Link>
             </Button>
           </div>
 
@@ -75,13 +76,19 @@ const Navigation = () => {
                       ? "text-primary neon-glow"
                       : "text-foreground hover:text-primary hover:neon-glow"
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   {item.name}
                 </Link>
               ))}
               <Button variant="cyber" size="lg" className="mt-4" asChild>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Link to="/contact" onClick={() => {
+                  setIsOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}>
                   Get a Quote
                 </Link>
               </Button>

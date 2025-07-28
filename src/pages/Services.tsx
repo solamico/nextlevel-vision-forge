@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Palette, 
   Code, 
@@ -13,7 +14,6 @@ import {
   Award,
   Zap
 } from "lucide-react";
-import servicesBackground from "@/assets/services-bg.jpg";
 
 const Services = () => {
   const services = [
@@ -84,20 +84,41 @@ const Services = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative py-20 bg-primary overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(10, 17, 40, 0.8), rgba(10, 17, 40, 0.8)), url(${servicesBackground})`,
+          backgroundImage: `url('/src/assets/cyber-services-bg.jpg')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       >
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
-            Our Services
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto animate-slide-in-left">
-            Comprehensive digital solutions to elevate your brand and drive business growth.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-primary/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,hsl(var(--background))_70%)]" />
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-primary/20 rotate-45 animate-slow-spin" />
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-secondary/30 animate-pulse" />
+          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-primary/10 rounded-full animate-bounce" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <div className="animate-fade-in">
+            <h1 className="font-heading text-4xl md:text-7xl font-bold mb-6 cyber-glitch neon-glow" data-text="Our Services">
+              Our <span className="text-primary animate-neon-pulse">Services</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+              Comprehensive digital solutions to elevate your brand and drive unprecedented growth in the digital realm.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="cyber" size="xl" asChild>
+                <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Get Started</Link>
+              </Button>
+              <Button variant="glass" size="xl" asChild>
+                <Link to="/portfolio" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>View Our Work</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -183,11 +204,11 @@ const Services = () => {
             Let's discuss your project and see how we can help bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="xl">
-              Get a Quote
+            <Button variant="secondary" size="xl" asChild>
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Get a Quote</Link>
             </Button>
-            <Button variant="outline" size="xl" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              Book Consultation
+            <Button variant="outline" size="xl" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Book Consultation</Link>
             </Button>
           </div>
         </div>
